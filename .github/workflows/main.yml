@@ -1,0 +1,65 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.<Service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd" name="Next DST Change Service" type="org.bluetooth.service.next_dst_change" uuid="1807">
+<InformativeText>
+<Abstract> This service defines how the information about an upcoming DST change can be exposed using the Generic Attribute Profile (GATT). </Abstract>
+<Summary> This service enables a Bluetooth device that has knowledge about the next occurrence of a DST change to expose this information to another Bluetooth device. </Summary>
+</InformativeText>
+<Dependencies>
+<Dependency>This service has no dependencies on other GATT-based services.</Dependency>
+</Dependencies>
+<Transports>
+<Classic>false</Classic>
+<LowEnergy>true</LowEnergy>
+</Transports>
+<ErrorCodes> </ErrorCodes>
+<Characteristics>
+<Characteristic name="Time with DST" type="org.bluetooth.characteristic.time_with_dst">
+<Requirement>Mandatory</Requirement>
+<Properties>
+<Read>Mandatory</Read>
+<Write>Excluded</Write>
+<WriteWithoutResponse>Excluded</WriteWithoutResponse>
+<SignedWrite>Excluded</SignedWrite>
+<ReliableWrite>Excluded</ReliableWrite>
+<Notify>Excluded</Notify>
+<Indicate>Excluded</Indicate>
+<WritableAuxiliaries>Excluded</WritableAuxiliaries>
+<Broadcast>Excluded</Broadcast>
+</Properties>
+</Characteristic>
+</Characteristics>
+</Service>
